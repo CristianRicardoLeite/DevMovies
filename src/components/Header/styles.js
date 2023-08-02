@@ -28,7 +28,7 @@ export const ContainerLeft = styled.div`
         width: 25%;
 
         @media (max-width: 600px) {
-        width: 50%;
+        width: 80%;
     }
     }
 `
