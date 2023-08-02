@@ -11,16 +11,6 @@ justify-content: space-between;
 padding: 10px;
 background: ${props => props.colorBackground ? '#000' : 'transparent'};
 transition: background 0.6s ease-in-out;
-@media (max-width: 380px) {
-    }
-    @media (max-width: 600px) {
-    }
-    @media (max-width: 800px) {
-    }
-    @media (max-width: 1000px) {
-    }
-
-
 `
 
 export const ContainerLeft = styled.div`
