@@ -32,12 +32,6 @@ align-items: center;
 list-style: none;
 gap: 50px;
 
-@media (max-width: 380px) {
-        display: none;
-    }
-    @media (max-width: 600px) {
-        display: none;
-    }
     @media (max-width: 800px) {
         display: none;
     }

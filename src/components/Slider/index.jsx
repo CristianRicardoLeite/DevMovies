@@ -5,7 +5,6 @@ import { Container } from './styles'
 import { Card } from '../Card'
 
 export const Slider = ({ info, title, id }) => {
-
     return (
         <Container id={id}>
             <h2>{title}</h2>

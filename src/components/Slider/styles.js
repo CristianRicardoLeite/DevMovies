@@ -4,6 +4,8 @@ export const Container = styled.div`
 width: 100vw;
 padding: 0 20px;
 
+
+
 h2{
 font-size: 1.2rem;
 margin: 50px 0 20px 20px;
@@ -12,6 +14,7 @@ margin: 50px 0 20px 20px;
     display: flex;
     justify-content: center;
     font-size: 1rem;
+    margin-left: 10px;
     }
 }
 

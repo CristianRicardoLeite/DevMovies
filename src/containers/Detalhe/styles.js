@@ -47,6 +47,12 @@ align-items: flex-start;
 height: 100%;
 max-width: 1500px;
 margin-top: -110px;
+
+@media screen and (min-width: 350px) and (max-width: 800px) {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 `
 
 export const Cover = styled.div`
@@ -61,6 +67,10 @@ img{
     border-radius:30px;
     box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
     animation: ${scale} .5s linear;
+
+    @media screen and (min-width: 350px) and (max-width: 800px) {
+        width: 200px;
+    }
 }
 `
 
@@ -71,15 +81,27 @@ display: flex;
 align-items: flex-start;
 flex-direction: column;
 
+@media screen and (min-width: 350px) and (max-width: 800px) {
+            padding: 10;
+            text-align: center;
+        }
+
     h2{
         font-size: 3rem;
         font-weight: 700;
+        
+        @media screen and (min-width: 350px) and (max-width: 800px) {
+            font-size: 1.5rem;
+        }
     }
 
     p{
         font-weight: 700;
         margin-top: 10px;
         margin-bottom: 20px;
+        @media screen and (min-width: 350px) and (max-width: 800px) {
+            font-size: .8rem;
+        }
     }
 `
 
@@ -111,9 +133,23 @@ width: 100%;
     }
 `
 
-// export const Container = styled.div``
+export const SwiperExtended = styled.div`
+display: none;
 
-// export const Container = styled.div``
+
+@media screen and (min-width: 350px) and (max-width: 800px) {
+    display: block;
+    width: 100vw;
+    margin-left: -120px;
+    .swiper-wrapper{
+        display: flex;
+}
+}
+`
+
+export const BigContainer = styled.div`
+width: 100vw;
+`
 
 // export const Container = styled.div``
 

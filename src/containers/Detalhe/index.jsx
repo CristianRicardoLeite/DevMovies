@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react"
-import { Background, Container, Cover, Info, ContainerMovies } from "./styles"
+import { Background, Container, Cover, Info, ContainerMovies, SwiperExtended, BigContainer } from "./styles"
 import { useParams } from "react-router-dom"
+
+import { Swiper, SwiperSlide } from 'swiper/react'
 
 import { getMovieCredits, getMovieSimilar, getMovieById, getMovieVideos } from '../../services/getData'
 
 import getImages from "../../utils/getImages"
-import { SpanGenres, Credits, Slider } from "../../components"
+import { SpanGenres, Credits, Slider, Card } from "../../components"
 
 
 export const Detail = () => {
@@ -27,8 +29,6 @@ export const Detail = () => {
                 getMovieById(id),
             ])
                 .then(([videos, credits, similar, movie]) => {
-
-                    console.log({ movie, videos, credits, similar })
                     setMovieVideo(videos)
                     setMovieCredits(credits)
                     setMovieSimilar(similar)
@@ -41,7 +41,7 @@ export const Detail = () => {
     }, []);
 
     return (
-        <>
+        <BigContainer>
             {movieById && (
                 <>
                     <Background image={getImages(movieById.backdrop_path)} />
@@ -54,6 +54,24 @@ export const Detail = () => {
                             <SpanGenres genres={movieById.genres} />
                             <p>{movieById.overview}</p>
                             <Credits credits={movieCredits} />
+                            <SwiperExtended>
+                                <Swiper
+                                    grabCursor
+                                    spaceBetween={10}
+                                    slidesPerView={'auto'}
+                                    className='swiper'
+                                    scrollbar={false}
+                                >
+                                    {movieCredits.map((item, index) => (
+                                        <SwiperSlide key={index}>
+                                            <Card item={item} />
+                                        </SwiperSlide>
+                                    )
+
+                                    )}
+
+                                </Swiper>
+                            </SwiperExtended>
                         </Info>
                     </Container>
                     <ContainerMovies>
@@ -69,6 +87,6 @@ export const Detail = () => {
                     {movieSimilar && <Slider info={movieSimilar} title={`Por que você assistiu ${movieById.title}`} />}
                 </>
             )}
-        </>
+        </BigContainer>
     )
 }
